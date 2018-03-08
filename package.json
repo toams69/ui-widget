@@ -1,0 +1,49 @@
+{
+  "name": "ui-widget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/vue/index.js",
+  "scripts": {
+    "build": "npm run build:vue",
+    "build:vue": "cross-env NODE_ENV=production webpack --config src/vue/config/webpack.config.min.js --progress --hide-modules && \"node_modules/.bin/node-sass\" src/vue/themes/default/default.scss dist/vue-widget-default.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toams69/ui-widget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toams69/ui-widget/issues"
+  },
+  "homepage": "https://github.com/toams69/ui-widget#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.9",
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "git-update-ghpages": "1.3.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.2"
+  }
+}
