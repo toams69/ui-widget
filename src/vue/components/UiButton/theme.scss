@@ -27,29 +27,29 @@
     box-shadow: 0 0 0 3px $ui-theme-shadow-lightblue;
   }
   &:focus, &:hover {
-    color: $ui-theme-text-dark;
+    color: $ui-theme-main-dark;
     text-decoration: none;
   }
 
   &.default {
-    color: $ui-theme-text-dark;
+    color: $ui-theme-main-dark;
     background: $ui-theme-background-light-1;
     background: linear-gradient(to bottom,$ui-theme-background-light-1,$ui-theme-background-light-2);
     background: -o-linear-gradient(bottom,$ui-theme-background-light-1,$ui-theme-background-light-2);
     border-color: $ui-theme-background-light-3;
     &:active {
-      color: $ui-theme-text-dark;
+      color: $ui-theme-main-dark;
       background: $ui-theme-background-light-3;
       background: linear-gradient(to bottom,$ui-theme-background-light-3,$ui-theme-background-light-4);
       background: -o-linear-gradient(bottom,$ui-theme-background-light-3,$ui-theme-background-light-4);
       border-color: $ui-theme-background-light-5;
     }
     &:focus {
-      color: $ui-theme-text-dark;
+      color: $ui-theme-main-dark;
       border-color: $ui-theme-outline-lightblue;
     }
     &:hover {
-      color: $ui-theme-text-dark;
+      color: $ui-theme-main-dark;
       box-shadow: 0 0 2px 2px $ui-theme-background-light-3;
     }
     &[disabled] {
@@ -61,31 +61,31 @@
     }
   }
   &.primary {
-    color: $ui-theme-text-light;
+    color: $ui-theme-main-light;
     background: $ui-theme-background-primary-1;
     background: linear-gradient(to bottom,$ui-theme-background-primary-1,$ui-theme-background-primary-2);
     background: -o-linear-gradient(bottom,$ui-theme-background-primary-1,$ui-theme-background-primary-2);
-    border-color: $ui-theme-background-primary-3;
+    border-color: $ui-theme-main-primary-color-2;
     &:active {
-      color: $ui-theme-text-light;
+      color: $ui-theme-main-light;
       background: $ui-theme-background-primary-4;
       background: linear-gradient(to bottom,$ui-theme-background-primary-4,$ui-theme-background-primary-5);
       background: -o-linear-gradient(bottom,$ui-theme-background-primary-4,$ui-theme-background-primary-5);
       border-color: $ui-theme-background-primary-6;
     }
     &:focus {
-      color: $ui-theme-text-light;
+      color: $ui-theme-main-light;
       border-color: $ui-theme-outline-darkblue;
     }
     &:hover {
-      color: $ui-theme-text-light;
-      box-shadow: 0 0 2px 2px $ui-theme-background-primary-7;
+      color: $ui-theme-main-light;
+      box-shadow: 0 0 2px 2px $ui-theme-main-primary-color;
     }
     &[disabled] {
-      color: $ui-theme-text-light-2;
+      color: $ui-theme-main-light-2;
       background: 0 0;
       background-color: $ui-theme-background-primary-disabled;
-      border-color: $ui-theme-background-primary-3;
+      border-color: $ui-theme-main-primary-color-2;
       border-color: $ui-theme-background-primary-disabled-2;
     }
   }

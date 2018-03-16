@@ -1,0 +1,35 @@
+.ui-tabs {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    display: block;
+    float: left;
+    a {
+      cursor: pointer;
+      color: #98a7b8;
+      border-top-color: $ui-theme-main-dark;
+      border-top-style: solid;
+      border-top-width: 3px;
+      margin-right: 12px;
+      margin-left: 12px;
+      line-height: 20px;
+      padding: 7px 0 10px 0;
+      display: block;
+      text-decoration: none;
+      &:hover {
+        color: $ui-theme-main-light;
+      }
+    }
+    &[active] {
+      a {
+        font-weight: 700;
+        color: $ui-theme-main-light;
+        border-top-color: #5e99ff;
+        border-top-style: solid;
+        border-top-width: 3px;
+      }
+    }
+  }
+}
