@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'UiTabs',
+  name: 'ui-tabs',
   props: {
     'ui-sync-route': Boolean
   },
@@ -19,7 +19,7 @@ export default {
     }
   },
   watch: {
-    '$route'(to, from) {
+    '$route' (to, from) {
       for (var j = 0; j < this.tabs.length; j++) {
         if (this.tabs[j].getAttribute('to') === to.path) {
           this.tabs[j].setAttribute('active', '')

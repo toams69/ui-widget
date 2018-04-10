@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'UiIcon',
+  name: 'ui-icon',
   props: {
     src: String,
     icon: String,

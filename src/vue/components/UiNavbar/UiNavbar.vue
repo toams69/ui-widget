@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'UiNavbar',
+  name: 'ui-navbar',
   data () {
     return {}
   }

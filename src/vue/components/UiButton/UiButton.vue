@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'UiButton',
+  name: 'ui-button',
   data () {
     return {}
   }

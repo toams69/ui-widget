@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'UiLoadingSpinner',
+  name: 'ui-loading-spinner',
   data () {
     return {}
   }

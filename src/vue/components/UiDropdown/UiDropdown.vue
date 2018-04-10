@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'UiDropdown',
+  name: 'ui-dropdown',
   data () {
     return {}
   },

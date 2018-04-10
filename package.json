@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/vue/index.js",
   "scripts": {
-    "build": "npm run build:vue",
-    "build:vue": "cross-env NODE_ENV=production webpack --config src/vue/config/webpack.config.min.js --progress --hide-modules && \"node_modules/.bin/node-sass\" src/vue/themes/default/default.scss dist/vue-widget-default.css",
+    "build": "npm run build:vue && npm run build:vuecc && npm run build:css",
+    "build:vue": "cross-env NODE_ENV=production webpack --config src/vue/config/webpack.config.min.js --progress --hide-modules",
+    "build:vuecc": "cross-env NODE_ENV=production webpack --config src/vuecc/config/webpack.config.vuecc.js --progress --hide-modules",
+    "build:css": "node_modules/.bin/node-sass src/vue/themes/default/default.scss dist/vue-widget-default.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -40,6 +42,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "vue": "^2.5.13",
+    "vue-custom-element": "^2.1.0",
     "vue-loader": "^13.7.0",
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.13",
