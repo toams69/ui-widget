@@ -1,19 +1,18 @@
 .ui-navbar {
-  background-color: $ui-theme-main-dark;
+  background-color: $ui-theme-main-dark-2;
   color: $ui-theme-main-light-2;
   height: 40px;
   line-height: 40px;
   display: flex;
   justify-content: space-between;
 
-  a {
-    cursor: pointer;
-    display: flex;
-    text-decoration: none;
-    outline: 0;
-    outline-offset: 0;
+  .ui-navbar-title {
+    font-size: 13px;
   }
-
+  .icon-special-g-brandmark {
+    position: relative;
+    bottom: 3px;
+  }
   .ui-navbar-section-left {
     display: flex;
     align-items: center;
@@ -23,10 +22,5 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-  .ui-navbar-header {
-    .ui-navbar-title {
-      color: $ui-theme-main-light-2;
-    }
   }
 }

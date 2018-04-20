@@ -8,7 +8,7 @@
     position: inherit;
     line-height: 1;
     display: inline-block;
-    font-family: ark-icons;
+    font-family: ArkIcons;
     font-size: 30px;
     color: $ui-theme-main-light-2;
     &:hover {
@@ -19,7 +19,7 @@
     }
   }
   img {
-    display:inline-block;
+    display: inline-block;
     width: 30px;
     height: 30px;
     &.mirrored {
@@ -34,10 +34,10 @@
     }
   }
   &.icon-small {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     span {
-      font-size: 20px;
+      font-size: 24px;
     }
   }
   &.icon-large {

@@ -1,7 +1,7 @@
 <template>
   <div class="ui-icon">
     <img v-if="src" :src="src" :class="[rotate ? 'mirrored' : '']">
-    <span v-else :class="[icon, rotate ? 'mirrored' : '']"></span>
+    <span v-else :class="['icon-' + icon, rotate ? 'mirrored' : '']"></span>
   </div>
 </template>
 

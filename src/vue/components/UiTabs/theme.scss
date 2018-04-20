@@ -9,7 +9,7 @@
     a {
       cursor: pointer;
       color: #98a7b8;
-      border-top-color: $ui-theme-main-dark;
+      border-top-color: $ui-theme-main-dark-2;
       border-top-style: solid;
       border-top-width: 3px;
       margin-right: 12px;
@@ -26,7 +26,7 @@
       a {
         font-weight: 700;
         color: $ui-theme-main-light;
-        border-top-color: #5e99ff;
+        border-top-color: $ui-theme-background-primary-3;
         border-top-style: solid;
         border-top-width: 3px;
       }
