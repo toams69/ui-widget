@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ui-widget</title>
+    <link href="../../dist/vue-widget-default.css" rel="stylesheet">
+    <script src="../../dist/vuewidget.vuecc.js"></script>
+    <script>
+      function executeCommand() {
+        var ret = eval(document.getElementById("command").value);
+        document.getElementById('result').innerHTML = ret;
+      }
+      var showCommand = function (commandName) {
+				var command = "", commandHelp = "";
+				switch(commandName) {
+                    case "changeTitle":
+                        command = "document.getElementById('uiToast').setAttribute('toast-title', 'new Title')";
+                        commandHelp = "Create a toast.";
+                        break;
+                    case 'changeMessage':
+                        command = "document.getElementById('uiToast').setAttribute('message', 'new message')";
+                        commandHelp = "Remove all toasts.";
+                        break;
+                    case 'changeTopBorderColor':
+                        command = "document.getElementById('uiToast').setAttribute('top-border-color', 'red')";
+                        commandHelp = "Remove all toasts.";
+                        break;
+                    case 'changeSubject':
+                        command = "document.getElementById('uiToast').setAttribute('subject', 'new subject')";
+                        commandHelp = "Remove all toasts.";
+                        break;
+                    case 'changeKeyValues':
+                        command = "document.getElementById('uiToast').keyValues = {key1: 'value1', key2: 'value2'}";
+                        commandHelp = "Remove all toasts.";
+                        break;
+                    case 'changeButtons':
+                        command = "document.getElementById('uiToast').buttons ="  + JSON.stringify([
+                            {
+                                displayName: 'Cancel',
+                                style: 'default',
+                                callback: 'function (idB) { console.log(\'Cancel clicked on toast \' + idB) }'
+                            },
+                            {
+                                displayName: 'Done',
+                                style: 'primary',
+                                callback: 'function (idB) { console.log(\'Done clicked on toast \' + idB) }'
+                            }
+                        ], null, '\t');
+                        commandHelp = "Remove all toasts.";
+                        break;
+                }
+				document.getElementById("command").value = command;
+			}
+    </script>
+    <style>
+      body {
+        font-family: 'Roboto';
+        font-size: 12px;
+      }
+      #uiToast {
+        width: 290px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 5px 24px;
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.66666667;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 2px;
+      }
+      .btn-primary {
+        color: #fdfdfd;
+        background: #5081e1;
+        background: linear-gradient(to bottom,#5081e1,#4375d6);
+        background: -o-linear-gradient(bottom,#5081e1,#4375d6);
+        border-color: #2e69db;
+      }
+      .btn-default {
+        background-color: #555D66;
+        border-color: #555D66;
+        color: #FDFDFD;
+        background-image: none;
+      }
+      .btn-default:hover {
+        box-shadow: 0 0 2px 2px #dae1e8;
+      }
+      .btn-primary:hover {
+        color: #fdfdfd;
+        box-shadow: 0 0 2px 2px #75a8ff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ui Toast</h1>
+    <p style="white-space: pre-wrap">
+    <b>&lt;ui-toast&gt;&lt;/ui-toast&gt;</b>
+    </p>
+
+
+    <ui-toast id='uiToast' toast-title='The Title' message='the message' top-border-color='green' icon-uri="https://cdn1.iconfinder.com/data/icons/free-social-media-12/32/RSS_social_media-128.png">
+    </ui-toast>
+
+    <h2>Command Area</h2>
+    <div class='commandButtons'>
+        <button class="btn btn-default" onclick="showCommand('changeTitle')">changeTitle</button>
+        <button class="btn btn-default" onclick="showCommand('changeMessage')">changeMessage</button>
+        <button class="btn btn-default" onclick="showCommand('changeTopBorderColor')">changeTopBorderColor</button>
+        <button class="btn btn-default" onclick="showCommand('changeButtons')">changeButtons</button>
+        <button class="btn btn-default" onclick="showCommand('changeKeyValues')">changeKeyValues</button>
+        <button class="btn btn-default" onclick="showCommand('changeSubject')">changeSubject</button>
+    </div>
+    <br />
+    <textarea id='command' style='height: 247px; width: 100%; box-sizing: border-box;margin-bottom: 10px;'>
+
+    </textarea>
+    <br/>
+    <div class='commandButtons'>
+        <button class="btn btn-primary" onclick="executeCommand()">Execute</button>
+        <button class="btn btn-primary" onclick="document.getElementById('command').value = ''">Clear</button>
+    </div>
+    <h4>Event Received</h4>
+    <div id='events' style="padding: 0 10px;">
+
+    </div>
+    <script>
+        document.getElementById('uiToast').addEventListener('ButtonClicked', function (d) {
+            document.getElementById('events').innerHTML = 'ButtonClicked event received with ' + JSON.stringify(d.detail);
+        })
+    </script>
+  </body>
+</html>

@@ -1,6 +1,14 @@
 // Variables
 @import './variables';
 
+// Common
+.fade-enter-active, .fade-leave-active {
+    transition: all 0.5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
 // Components
 @import '../../components/UiNavbar/theme';
 @import '../../components/UiButton/theme';
@@ -8,3 +16,5 @@
 @import '../../components/UiLoadingSpinner/theme';
 @import '../../components/UiIcon/theme';
 @import '../../components/UiTabs/theme';
+@import '../../components/UiToast/theme';
+@import '../../components/UiToaster/theme';

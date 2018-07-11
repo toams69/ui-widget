@@ -42,7 +42,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "vue": "^2.5.13",
-    "vue-custom-element": "^2.1.0",
+    "vue-custom-element": "^3.2.2",
     "vue-loader": "^13.7.0",
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.13",

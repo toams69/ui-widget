@@ -4,6 +4,8 @@ import UiNavbar from './UiNavbar'
 import UiLoadingSpinner from './UiLoadingSpinner'
 import UiIcon from './UiIcon'
 import UiTabs from './UiTabs'
+import UiToast from './UiToast'
+import UiToaster from './UiToaster'
 
 export {
   UiButton,
@@ -11,5 +13,7 @@ export {
   UiNavbar,
   UiLoadingSpinner,
   UiIcon,
-  UiTabs
+  UiTabs,
+  UiToast,
+  UiToaster
 }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>common-ui</title>
+    <!-- <script src="/dist/webComponent.js"></script> -->
+    <link href="../../dist/vue-widget-default.css" rel="stylesheet">
+    <script src="../../dist/vuewidget.vuecc.js"></script>
+    <script>
+      function executeCommand() {
+        var ret = eval('document.getElementById(\'uiToaster\').getVueInstance().' + document.getElementById("command").value);
+        document.getElementById('result').innerHTML = ret;
+      }
+      function showCommand(commandName) {
+				var command = "", commandHelp = "";
+				switch(commandName) {
+          case "createToast":
+            command = "createToast(" + JSON.stringify(
+              {
+                'toast-title': "The Titlezzzz",
+                "icon-uri": 'https://cdn1.iconfinder.com/data/icons/free-social-media-12/32/RSS_social_media-128.png',
+                "message": 'lorem Ipsum bla bla bla',
+                "subject": 'Subject',
+                'top-border-color': 'yellow',
+                'keyValues': {key1: 'value1', key2: 'value2', key3: 'value3'},
+                'buttons': [
+                  {
+                    displayName: 'Dismiss',
+                    style: 'default',
+                    callback: 'function () { console.log(\'Dismiss clicked\') }'
+                  },
+                  {
+                    displayName: 'Show',
+                    style: 'primary',
+                    callback: 'function () { console.log(\'Show clicked\') }'
+                  }
+                ]
+              }, null, '\t') + 
+           ");";
+            commandHelp = "Create a toast.";
+            break;
+          case 'clearAllToasts':
+            command = "clearAllToasts();";
+            commandHelp = "Remove all toasts.";
+            break;
+          case 'clearToast':
+            command = "clearToast(idToast);";
+            commandHelp = "remove a specific toast.";
+            break;
+          case 'moveToasterToBottomLeft':
+            document.getElementById('uiToaster').position = 'bottomLeft';
+            document.getElementById('result').innerHTML = 'document.getElementById(\'uiToaster\').position = \'bottomLeft\';';
+            break;
+          case 'moveToasterToBottomRight':
+            document.getElementById('uiToaster').position = 'bottomRight';
+            document.getElementById('result').innerHTML = 'document.getElementById(\'uiToaster\').position = \'bottomRight\';';
+            break;
+          case 'moveToasterToTopLeft':
+            document.getElementById('uiToaster').position = 'topLeft';
+            document.getElementById('result').innerHTML = 'document.getElementById(\'uiToaster\').position = \'bottomLeft\';';
+            break;
+          case 'moveToasterToTopRight':
+            document.getElementById('uiToaster').position = 'topRight';
+            document.getElementById('result').innerHTML = 'document.getElementById(\'uiToaster\').position = \'bottomRight\';';
+            break;
+        }
+        
+				document.getElementById("command").value = command;
+				document.getElementById("commandHelp").innerText = commandHelp;
+			}
+    </script>
+    <style>
+      body {
+        font-family: 'Roboto';
+        font-size: 12px;
+      }
+      #uiToaster {
+        width: 290px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 5px 24px;
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.66666667;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 2px;
+      }
+      .btn-primary {
+        color: #fdfdfd;
+        background: #5081e1;
+        background: linear-gradient(to bottom,#5081e1,#4375d6);
+        background: -o-linear-gradient(bottom,#5081e1,#4375d6);
+        border-color: #2e69db;
+      }
+      .btn-default {
+        background-color: #555D66;
+        border-color: #555D66;
+        color: #FDFDFD;
+        background-image: none;
+      }
+      .btn-default:hover {
+        box-shadow: 0 0 2px 2px #dae1e8;
+      }
+      .btn-primary:hover {
+        color: #fdfdfd;
+        box-shadow: 0 0 2px 2px #75a8ff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ui Toaster</h1>
+    <p style="white-space: pre-wrap">
+    <b>&lt;ui-toaster&gt;&lt;/ui-toaster&gt;</b>
+    </p>
+
+
+    <ui-toaster id='uiToaster'>
+    </ui-toaster>
+
+    <h2>Command Area</h2>
+    <div class='commandButtons'>
+        <button class="btn btn-default" onclick="showCommand('createToast')">createToast</button>
+        <button class="btn btn-default" onclick="showCommand('clearToast')">clearToast</button>
+        <button class="btn btn-default" onclick="showCommand('clearAllToasts')">clearAllToasts</button>
+        <button class="btn btn-default" onclick="showCommand('moveToasterToBottomLeft')">moveToasterToBottomLeft</button>
+        <button class="btn btn-default" onclick="showCommand('moveToasterToBottomRight')">moveToasterToBottomRight</button>
+        <button class="btn btn-default" onclick="showCommand('moveToasterToTopRight')">moveToasterToTopRight</button>
+        <button class="btn btn-default" onclick="showCommand('moveToasterToTopLeft')">moveToasterToTopLeft</button>
+    </div>
+    <br />
+    <textarea id='command' style='height: 400px; width: 100%; box-sizing: border-box;'>
+
+    </textarea>
+    <div class='commandButtons'>
+		    <button class="btn btn-primary" onclick="executeCommand()">Execute</button>
+    </div>
+    <h4>Result of command</h4>
+    <div id='result' style="padding: 0 10px;">
+
+    </div>
+    <h4>Event Received</h4>
+    <div id='events' style="padding: 0 10px;">
+
+    </div>
+
+    <script>
+        document.getElementById('uiToaster').addEventListener('ToastCleared', function (d) {
+            document.getElementById('events').innerHTML = 'ToastCleared event received with ' + JSON.stringify(d.detail);
+        })
+        document.getElementById('uiToaster').addEventListener('AllToastCleared', function (d) {
+            document.getElementById('events').innerHTML = 'AllToastCleared event received with ' + JSON.stringify(d.detail);
+        })
+        document.getElementById('uiToaster').addEventListener('ToastCreated', function (d) {
+            document.getElementById('events').innerHTML = 'ToastCreated event received with ' + JSON.stringify(d.detail);
+        })
+    </script>
+  </body>
+</html>

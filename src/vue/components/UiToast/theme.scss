@@ -1,0 +1,49 @@
+.ui-toast {
+    padding: 20px 24px;
+    line-height: 18px;
+    background: #393E45;
+    border: 1px solid $ui-theme-main-med;
+    color: $ui-theme-main-light;
+    position: relative;
+    .top-border {
+        position: absolute;
+        top: -1px;
+        height: 3px;
+        left: -1px;
+        right: -1px;
+    }
+    .label, .subject {
+        font-weight: bold;
+        color: #9BAAB8;
+    }
+    .header {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .header img {
+        max-width: 32px;
+        max-height: 32px;
+    }
+    .buttons {
+        margin: 20px 0px 0 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    h2 {
+        margin: 0 8px;
+        line-height: 32px;
+        display: block;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    .key-values-area {
+        table-layout: fixed;
+        width: 100%;
+    }
+    .key-values-area > tr > td:first-child {
+        width: 50px;
+    }
+    .key-values-area > tr:last-child > td {
+        padding-bottom: 20px;
+    }
+}

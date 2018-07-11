@@ -60,6 +60,20 @@
       border-color: $ui-theme-background-disabled-2;
     }
   }
+  &.secondary {
+    background: $ui-theme-background-secondary-1;
+    border-color: $ui-theme-background-secondary-1;
+    color: $ui-theme-main-light;
+
+    &:focus {
+      color: $ui-theme-main-light;
+      border-color: $ui-theme-background-light-3;
+    }
+    &:hover {
+      color: $ui-theme-main-light;
+      box-shadow: 0 0 2px 2px $ui-theme-background-light-3;
+    }
+  }
   &.primary {
     color: $ui-theme-main-light;
     background: $ui-theme-background-primary-1;
